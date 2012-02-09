@@ -1,0 +1,12 @@
+<%= semantic_form_for @project do |f| %>
+	<%= f.inputs %>
+	<%= f.inputs :name => "Roles", :id => "roles" do %>
+		<%= f.semantic_fields_for :roles do |role| %>
+			<%= role.inputs :person, :title %>
+			<%= role.input :status, :as => :radio %>
+			<hr />
+		<% end %>
+	<% end %>
+	
+	<%= f.buttons %>
+<% end %>

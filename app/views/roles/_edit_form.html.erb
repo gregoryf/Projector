@@ -1,0 +1,7 @@
+<%= semantic_form_for [@project, @role] do |f| %>
+	<label>Project:</label><span> <%= @role.project.title %></span><br>
+	<label>Person:</label><span> <%= @role.person.name %></span>
+	<%= f.inputs :status, :title %>
+	<%= f.buttons %>
+	<%= link_to "Back to Project", project_path(@project) %> | <%= link_to "Projects Index", projects_url %> | <%= link_to "Destroy this role?", project_role_path( :project_id => @role.project_id, :id => @role.id), { :confirm => "Are you sure?", :method => :delete } %>
+<% end %>

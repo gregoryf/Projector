@@ -3,4 +3,13 @@
 	<div class="role-title"><%= role.title %></div>
 	<div class="status-title <%= dom_id(role.status) %>"><%= role.status.title %></div>
 	<div class="time" datetime ="<%= role.updated_at %>"><%= role.updated_at.to_formatted_s(:short) %></div>
+	<div class="edit"><%= link_to_icon('edit', 
+										edit_project_role_path(:id => role.id,
+										:project_id => role.project_id)) %>
+	</div>
+	<div class="destroy"><%= link_to_icon('destroy', 
+										   project_role_path(:id => role.id, :project_id => role.project_id), 
+										   { :confirm => "Are you sure?",
+											 :method => :delete }) %>
+	</div>
 </div>

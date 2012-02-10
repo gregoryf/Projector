@@ -1,9 +1,7 @@
-<p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
+<div class="project">
+<%= project_title_links(@project) %>
 
-<%= render :partial => 'roles', :collection => @project.roles %>
+<%= render @project.roles %>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to "Add New Role", :controller => "roles", :action => "new", :project_id => @project.id %>
+</div>
